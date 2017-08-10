@@ -1,6 +1,8 @@
 [submodule "beta7-theme"]
+	ignore = dirty
 	path = beta7-theme
 	url = ./beta7-theme
 [submodule "pelican-plugins"]
+	ignore = dirty
 	path = pelican-plugins
 	url = https://github.com/getpelican/pelican-plugins
