@@ -22,7 +22,6 @@ TIMEZONE = 'America/Vancouver'
 DEFAULT_LANG = 'English'
 HTML_LANG = 'en'
 
-# Menu items
 MENU_ITEMS = (('Home', ''),
               ('Archives', 'archives.html'),
               ('Categories', 'categories.html'),)
@@ -71,10 +70,15 @@ AUTHOR_FEED_RSS = None
 #  Plugins, Filters and other Add-Ons
 # #############################################################################
 
+PLUGIN_PATHS = [
+    'pelican-plugins',
+    'plugins',
+]
+
 PLUGINS = [
-    'plugins.assets',
-    'plugins.human_readable_dates',
-    'plugins.sitemap',
+    'assets',
+    'human_readable_dates',
+    'sitemap',
 ]
 
 MARKDOWN = {
