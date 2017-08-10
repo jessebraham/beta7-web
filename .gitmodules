@@ -1,0 +1,3 @@
+[submodule "beta7-theme"]
+	path = beta7-theme
+	url = ./beta7-theme
