@@ -1,3 +1,6 @@
 [submodule "beta7-theme"]
 	path = beta7-theme
 	url = ./beta7-theme
+[submodule "plugins/pelican-plugins"]
+	path = plugins/pelican-plugins
+	url = https://github.com/getpelican/pelican-plugins
