@@ -3,9 +3,12 @@
 '''
 human_readable_dates.py
 
+<<<<<<< HEAD
 Jesse Braham <jesse@beta7.io>
 August 2017
 
+=======
+>>>>>>> e0d043674b2de5a37ba901338b5a42af9e4fe4c5
 A simple module to convert timestamps to a human-readable format. Uses the
 Arrow module.
 
