@@ -100,6 +100,10 @@ class LuminousProcessor(BlockProcessor):
 
         # Set the anchor's text as the raw block we parsed at the beginning of
         # the function, which in turns adds our image.
+        match = self.SOURCE_RE.search(raw_block)
+        raw_block = self.SOURCE_RE.sub(r'({0})'.format(
+            self.__build_thumbs_url(match.group(1))), raw_block)
+
         anchor.text = raw_block
 
         # Create the <figcaption> element, setting its parent as the above
