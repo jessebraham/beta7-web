@@ -16,7 +16,9 @@ AUTHOR = 'Jesse Braham'
 COPYRIGHT = 'Jesse Braham'
 
 SITE_HEADER_TITLE = 'Go away'
-DESCRIPTION = 'Populate me you bitch'
+DESCRIPTION = 'Adventures in software development, system administration, ' \
+              + ' networking, engineering and more. Viewer discretion is ' \
+              + 'advised.'
 
 DEFAULT_LANG = 'en'
 TIMEZONE = 'America/Vancouver'
@@ -83,7 +85,21 @@ AUTHOR_FEED_RSS = None
 
 
 # #############################################################################
-#  Plugins, Filters and other Add-Ons
+#  Extension Configuration
+# #############################################################################
+
+MARKDOWN = {
+    'extension_configs': {
+        'extensions.luminous': {},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.tables': {},
+        'markdown.extensions.toc': {},
+    },
+}
+
+
+# #############################################################################
+#  Plugin Configuration
 # #############################################################################
 
 PLUGIN_PATHS = [
@@ -99,13 +115,4 @@ PLUGINS = [
 
 SITEMAP = {
     'format': 'xml',
-}
-
-MARKDOWN = {
-    'extension_configs': {
-        'extensions.luminous': {},
-        'markdown.extensions.extra': {},
-        'markdown.extensions.tables': {},
-        'markdown.extensions.toc': {},
-    },
 }
