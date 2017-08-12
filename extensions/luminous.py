@@ -40,6 +40,18 @@ class LuminousProcessor(BlockProcessor):
     FIGURES_RE = re.compile('|'.join(f for f in FIGURES))
     SOURCE_RE = re.compile(r'\((.*)\).*$')
 
+    def __build_thumbs_url(self, url, thumbs_dir='thumbs'):
+        '''
+        Given an URL to an image, build the URL to the respective thumbnail.
+        '''
+
+        # Split the URL and insert the thumbs directory.
+        url_segments = url.split('/')
+        url_segments.insert(-1, thumbs_dir)
+
+        # Re-join the URL and return the result.
+        return '/'.join(url_segments)
+
     def test(self, parent, block):
         '''
         Determine whether or not the current block is an image, and if it is,
@@ -55,7 +67,8 @@ class LuminousProcessor(BlockProcessor):
         # Determine whether or not the image tag is nested within a figure.
         is_in_figure = (parent.tag == 'figure')
 
-
+        # If the block is an image, only occupies a single line, and is not
+        # nested inside a <figure>, return True. Otherwise, return False.
         return is_image and is_only_one_line and not is_in_figure
 
     def run(self, parent, blocks):
@@ -103,7 +116,7 @@ class LuminousExtension(Extension):
     LuminousExtension
     '''
 
-    def extendMarkdown(self, md, md_globals):
+    def extendMarkdown(self, md, md_globals):  # pylint: disable=C0103,W0613
         '''
         Add an instance of LuminousProcessor to BlockParser.
         '''
