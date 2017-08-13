@@ -110,9 +110,16 @@ PLUGIN_PATHS = [
 PLUGINS = [
     'assets',
     'human_readable_dates',
+    'image_optimizer',
     'sitemap',
 ]
 
 SITEMAP = {
     'format': 'xml',
+}
+
+IMAGE_OPTIMIZER = {
+    'image_src': 'content/images',
+    'image_dest': 'output/images',
+    'max_width': 960,
 }
