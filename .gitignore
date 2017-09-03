@@ -1,6 +1,15 @@
-node_modules/
-__pycache__/
-venv/
-output/
+# Python directories & files
 
+__pycache__/
 *.py[odc]
+venv/
+
+
+# NPM directories & files
+
+node_modules/
+
+
+# Pelican directories & files
+
+output/
