@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- #
+# -*- coding: utf-8 -*-
 '''
-Development Configuration for Pelican
+Pelicanv Development Configuration for beta7.io
 '''
 
 
@@ -9,19 +9,24 @@ Development Configuration for Pelican
 #  Site Information & Metadata
 # #############################################################################
 
+DEFAULT_LANG = 'en'
+TIMEZONE = 'America/Vancouver'
+
 SITENAME = 'Beta7'
 SITEURL = ''
 
 AUTHOR = 'Jesse Braham'
 COPYRIGHT = 'Jesse Braham'
 
+# The terribly named 'SITE_HEADER_TITLE' sets the hover text of the site title
+# in the header.
 SITE_HEADER_TITLE = 'Go away'
+
 DESCRIPTION = 'Adventures in software development, system administration, ' \
               + ' networking, engineering and more. Viewer discretion is ' \
               + 'advised.'
 
-DEFAULT_LANG = 'en'
-TIMEZONE = 'America/Vancouver'
+# Put your GitHub profile's URL here, as it will be linked to in the footer.
 GITHUB_URL = 'https://github.com/jessebraham'
 
 
@@ -29,11 +34,16 @@ GITHUB_URL = 'https://github.com/jessebraham'
 #  Site Configuration
 # #############################################################################
 
+# Define the number of articles per page (if pagination is enabled), as well
+# as the maximum length, in words, of the summary to provide.
 DEFAULT_PAGINATION = 10
 SUMMARY_MAX_LENGTH = 32
 
+# For development, use relative URLs.
 RELATIVE_URLS = True
 
+# Display all user-created pages in the menu, sorted by their 'sort' meta
+# attributes.
 DISPLAY_PAGES_ON_MENU = True
 
 # We will use whatever folder a post is stored in as its category to keep
@@ -50,6 +60,7 @@ MENU_ITEMS = (('Home', ''),
 #  File Path Configuration
 # #############################################################################
 
+# Define the relative path to the content and theme directories.
 PATH = './content'
 THEME = './beta7-theme'
 
@@ -77,6 +88,7 @@ PAGE_URL = '{slug}.html'
 #  Feed Configuration
 # #############################################################################
 
+# For development, all RSS and Atom feeds are disabled.
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
