@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 '''
-Pelicanv Development Configuration for beta7.io
+Pelican Development Configuration for beta7.io
 '''
 
 
@@ -18,9 +18,7 @@ SITEURL = ''
 AUTHOR = 'Jesse Braham'
 COPYRIGHT = 'Jesse Braham'
 
-# The terribly named 'SITE_HEADER_TITLE' sets the hover text of the site title
-# in the header.
-SITE_HEADER_TITLE = 'Go away'
+SITESUBTITLE = 'Go away'
 
 DESCRIPTION = 'Adventures in software development, system administration, ' \
               + ' networking, engineering and more. Viewer discretion is ' \
@@ -68,10 +66,12 @@ THEME = './beta7-theme'
 EXTRA_PATH_METADATA = {'extra/favicon.ico': {'path': 'favicon.ico'},
                        'extra/robots.txt': {'path': 'robots.txt'},}
 
-# Do not create the 'author.html', 'authors.html' and 'tag.html' pages.
+# Do not create the 'author.html', 'authors.html', 'tag.html' and 'tags.html'
+# pages.
 AUTHOR_SAVE_AS = False
 AUTHORS_SAVE_AS = False
 TAG_SAVE_AS = False
+TAGS_SAVE_AS = False
 
 # Articles should be stored in folders with the name of the category, and the
 # URL should match the pattern
