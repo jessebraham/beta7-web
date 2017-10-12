@@ -2,7 +2,7 @@
 
 __pycache__/
 *.py[odc]
-venv/
+*env/
 
 
 # NPM directories & files
@@ -13,3 +13,8 @@ node_modules/
 # Pelican directories & files
 
 output/
+
+
+# VS Code
+
+.vscode/
