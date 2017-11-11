@@ -12,4 +12,4 @@ When I'm not writing code I enjoy being outdoors, listening to music, reading co
 
 <br />
 
-If you would like to get ahold of me, send me an email at [jesse@beta7.io](mailto:jesse@beta7.io).
+If you would like to get ahold of me, send me an email at [jesse&nbsp;at&nbsp;beta7(dot)io](mailto:jesse at beta7(dot)io).
