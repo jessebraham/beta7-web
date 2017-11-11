@@ -20,9 +20,8 @@ COPYRIGHT = 'Jesse Braham'
 
 SITESUBTITLE = 'Go away'
 
-DESCRIPTION = 'Adventures in software development, system administration, ' \
-              + ' networking, engineering and more. Viewer discretion is ' \
-              + 'advised.'
+DESCRIPTION = 'Various personal projects and technical topics such as ' \
+              + 'software development, electronics, engineering and more.'
 
 # Put your GitHub profile's URL here, as it will be linked to in the footer.
 GITHUB_URL = 'https://github.com/jessebraham'
@@ -49,8 +48,7 @@ DISPLAY_PAGES_ON_MENU = True
 USE_FOLDER_AS_CATEGORY = True
 
 # Items to display in the main navigation, with their respective URLs.
-MENU_ITEMS = (('Home', ''),
-              ('Archives', 'archives.html'),
+MENU_ITEMS = (('Archives', 'archives.html'),
               ('Categories', 'categories.html'),)
 
 
