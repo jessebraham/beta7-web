@@ -1,7 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 '''
-Pelican Development Configuration for beta7.io
+    pelicanconf.py
+    ~~~~~~~~~~~~~~
+
+    :copyright: (c)2017 by Jesse Braham <jesse@beta7.io>.
+    :license: MIT, see LICENSE for more details.
 '''
 
 
@@ -16,15 +20,9 @@ SITENAME = 'Beta7'
 SITEURL = ''
 
 AUTHOR = 'Jesse Braham'
-COPYRIGHT = 'Jesse Braham'
+GITHUB_USER = 'jessebraham'
 
-SITESUBTITLE = 'Go away'
-
-DESCRIPTION = 'Various personal projects and technical topics such as ' \
-              + 'software development, electronics, engineering and more.'
-
-# Put your GitHub profile's URL here, as it will be linked to in the footer.
-GITHUB_URL = 'https://github.com/jessebraham'
+DESCRIPTION = ''
 
 
 # #############################################################################
@@ -39,17 +37,9 @@ SUMMARY_MAX_LENGTH = 32
 # For development, use relative URLs.
 RELATIVE_URLS = True
 
-# Display all user-created pages in the menu, sorted by their 'sort' meta
-# attributes.
-DISPLAY_PAGES_ON_MENU = True
-
 # We will use whatever folder a post is stored in as its category to keep
 # things simple and organized.
 USE_FOLDER_AS_CATEGORY = True
-
-# Items to display in the main navigation, with their respective URLs.
-MENU_ITEMS = (('Archives', 'archives.html'),
-              ('Categories', 'categories.html'),)
 
 
 # #############################################################################
@@ -60,16 +50,19 @@ MENU_ITEMS = (('Archives', 'archives.html'),
 PATH = './content'
 THEME = './beta7-theme'
 
-# Copy any extra required files to the output directory.
-EXTRA_PATH_METADATA = {'extra/favicon.ico': {'path': 'favicon.ico'},
-                       'extra/robots.txt': {'path': 'robots.txt'},}
-
 # Do not create the 'author.html', 'authors.html', 'tag.html' and 'tags.html'
 # pages.
 AUTHOR_SAVE_AS = False
 AUTHORS_SAVE_AS = False
 TAG_SAVE_AS = False
 TAGS_SAVE_AS = False
+
+# Do not create the 'archives.html' page.
+ARCHIVES_SAVE_AS = False
+
+# Do not create the 'categories.html' or specific category pages.
+CATEGORY_SAVE_AS = False
+CATEGORIES_SAVE_AS = False
 
 # Articles should be stored in folders with the name of the category, and the
 # URL should match the pattern
@@ -100,7 +93,6 @@ AUTHOR_FEED_RSS = None
 
 MARKDOWN = {
     'extension_configs': {
-        'extensions.luminous': {},
         'markdown.extensions.extra': {},
         'markdown.extensions.tables': {},
         'markdown.extensions.toc': {},
@@ -119,8 +111,12 @@ PLUGIN_PATHS = [
 
 PLUGINS = [
     'assets',
-    'human_readable_dates',
-    'image_optimizer',
+    'gzip_cache',
+    'neighbors',
+    'optimize_images',
+    'pelican-ert',
+    'readable_dates',
+    'series',
     'sitemap',
 ]
 
@@ -128,8 +124,5 @@ SITEMAP = {
     'format': 'xml',
 }
 
-IMAGE_OPTIMIZER = {
-    'image_src': 'content/images',
-    'image_dest': 'output/images',
-    'max_width': 960,
-}
+ERT_WPM = 180
+ERT_FORMAT = '{time}'
