@@ -1,7 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 '''
-Pelican Production Configuration for beta7.io
+    publishconf.py
+    ~~~~~~~~~~~~~~
+
+    :copyright: (c)2017 by Jesse Braham <jesse@beta7.io>.
+    :license: MIT, see LICENSE for more details.
 '''
 
 # Insert the current directory into the system path so that pelicanconf can be
@@ -14,7 +18,7 @@ sys.path.insert(0, os.getcwd())
 
 # Import all configuration from our Development Configuration as a starting
 # point, since we will be overriding a few values.
-from pelicanconf import *  # pylint: disable=W0401,W0614
+from pelicanconf import *  # NOQA
 
 
 # #############################################################################
