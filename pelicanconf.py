@@ -22,17 +22,17 @@ SITEURL = ''
 AUTHOR = 'Jesse Braham'
 GITHUB_USER = 'jessebraham'
 
-DESCRIPTION = ''
+DESCRIPTION = 'The personal blog of Jesse Braham. A range of topics, most ' \
+              'of which technical in nature. Software development, ' \
+              'electronics, engineering and more.'
 
 
 # #############################################################################
 #  Site Configuration
 # #############################################################################
 
-# Define the number of articles per page (if pagination is enabled), as well
-# as the maximum length, in words, of the summary to provide.
-DEFAULT_PAGINATION = 10
-SUMMARY_MAX_LENGTH = 32
+# Define the number of articles per page (if pagination is enabled).
+DEFAULT_PAGINATION = 8
 
 # For development, use relative URLs.
 RELATIVE_URLS = True
@@ -120,9 +120,13 @@ PLUGINS = [
     'sitemap',
 ]
 
+# Use the default Sitemap settings. The plugin requires at minimum we set the
+# format, even though the default value is already 'xml'.
 SITEMAP = {
     'format': 'xml',
 }
 
+# Configure the Estimated Reading Time plugin. Set the "Words Per Minute" and
+# "Format" configuration variables to reasonable values.
 ERT_WPM = 180
 ERT_FORMAT = '{time}'
