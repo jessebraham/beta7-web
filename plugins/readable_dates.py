@@ -24,7 +24,7 @@ def format_time(timestamp):
     '''
 
     date = pendulum.parse(str(timestamp))
-    return date.format('MMMM Mo, YYYY', formatter='alternative')
+    return date.format('MMMM Do, YYYY', formatter='alternative')
 
 
 def add_filter(pelican):
