@@ -128,5 +128,5 @@ SITEMAP = {
 
 # Configure the Estimated Reading Time plugin. Set the "Words Per Minute" and
 # "Format" configuration variables to reasonable values.
-ERT_WPM = 180
+ERT_WPM = 220
 ERT_FORMAT = '{time}'
