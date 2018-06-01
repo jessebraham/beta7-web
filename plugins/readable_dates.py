@@ -15,16 +15,16 @@ from pelican import signals
 
 def format_time(timestamp):
     '''
-    Parse the provided timestamp into an Arrow object, then return the
+    Parse the provided timestamp into a Pendulum object, then return the
     formatted string.
 
-    MMMM - long month      (August)
+    MMMM - long month      (January)
     Do   - day with suffix (1st)
-    YYYY - full year       (2017)
+    YYYY - full year       (1970)
     '''
 
     date = pendulum.parse(str(timestamp))
-    return date.format('MMMM Do, YYYY', formatter='alternative')
+    return date.format('MMMM Do, YYYY')
 
 
 def add_filter(pelican):
