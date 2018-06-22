@@ -12,6 +12,7 @@ node_modules/
 
 # Pelican directories & files
 
+content/posts/drafts/
 output/
 
 
