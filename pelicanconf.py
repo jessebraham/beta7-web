@@ -4,9 +4,15 @@
     pelicanconf.py
     ~~~~~~~~~~~~~~
 
-    :copyright: (c)2017 by Jesse Braham <jesse@beta7.io>.
+    Configuration for Pelican, a static site generator. Used to generate
+    https://beta7.io/.
+
+    :copyright: (c)2018 by Jesse Braham <jesse@beta7.io>.
     :license: MIT, see LICENSE for more details.
 '''
+
+
+import datetime
 
 
 # ----------------------------------------------------------------------------
@@ -26,21 +32,29 @@ GITHUB_USER = 'jessebraham'
 # DESCRIPTION = 'The personal blog of Jesse Braham. A range of topics, most ' \
 #               'of which technical in nature. Software development, ' \
 #               'electronics, engineering and more.'
+CURRENT_YEAR = datetime.datetime.utcnow().year
 
 
 # ----------------------------------------------------------------------------
 #  Site Configuration
 # ----------------------------------------------------------------------------
 
-# Define the number of articles per page (if pagination is enabled).
-DEFAULT_PAGINATION = 8
-
-# For development, use relative URLs.
+# In development, use relative URLs.
 RELATIVE_URLS = True
+
+# Links to be displayed in the main navigation; each Tuple contains the Title
+# and URL for each navigation item.
+LINKS = (
+    ('Home',     ''),
+    ('About',    'about.html'),
+)
 
 # We will use whatever folder a post is stored in as its category to keep
 # things simple and organized.
 USE_FOLDER_AS_CATEGORY = True
+
+# Define the number of articles per page for the paginator.
+DEFAULT_PAGINATION = 10
 
 
 # ----------------------------------------------------------------------------
@@ -51,18 +65,14 @@ USE_FOLDER_AS_CATEGORY = True
 PATH = './content'
 THEME = './beta7-theme'
 
-# Do not create the 'author.html', 'authors.html', 'tag.html' and 'tags.html'
-# pages.
-AUTHOR_SAVE_AS = False
-AUTHORS_SAVE_AS = False
-TAG_SAVE_AS = False
-TAGS_SAVE_AS = False
-
-# Do not create the 'archives.html' page.
+# Do not create the following pages:
+#   - 'author.html', 'authors.html'
+#   - 'tag.html', 'tags.html'
+#   - 'archives.html'
+#   - 'categories.html'
+AUTHOR_SAVE_AS = AUTHORS_SAVE_AS = False
+TAG_SAVE_AS = TAGS_SAVE_AS = False
 ARCHIVES_SAVE_AS = False
-
-# Do not create the 'categories.html' or specific category pages.
-CATEGORY_SAVE_AS = False
 CATEGORIES_SAVE_AS = False
 
 # Articles should be stored in folders with the name of the category, and the
@@ -95,8 +105,6 @@ AUTHOR_FEED_RSS = None
 MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.extra': {},
-        'markdown.extensions.tables': {},
-        'markdown.extensions.toc': {},
     },
 }
 
@@ -107,7 +115,6 @@ MARKDOWN = {
 
 PLUGIN_PATHS = [
     'pelican-plugins',
-    'plugins',
 ]
 
 PLUGINS = [
@@ -115,8 +122,6 @@ PLUGINS = [
     'gzip_cache',
     'neighbors',
     'optimize_images',
-    'pelican-ert',
-    'readable_dates',
     'series',
     'sitemap',
 ]
@@ -126,8 +131,3 @@ PLUGINS = [
 SITEMAP = {
     'format': 'xml',
 }
-
-# Configure the Estimated Reading Time plugin. Set the "Words Per Minute" and
-# "Format" configuration variables to reasonable values.
-ERT_WPM = 220
-ERT_FORMAT = '{time}'
