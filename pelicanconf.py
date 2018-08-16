@@ -28,10 +28,9 @@ SITEURL = ''
 AUTHOR = 'Jesse Braham'
 GITHUB_USER = 'jessebraham'
 
-# TODO: Update me
-# DESCRIPTION = 'The personal blog of Jesse Braham. A range of topics, most ' \
-#               'of which technical in nature. Software development, ' \
-#               'electronics, engineering and more.'
+DESCRIPTION = 'The personal blog of Jesse Braham. A range of topics, most ' \
+              'of which technical in nature. Software development, ' \
+              'electronics, engineering and more.'
 CURRENT_YEAR = datetime.datetime.utcnow().year
 
 
@@ -46,6 +45,7 @@ RELATIVE_URLS = True
 # and URL for each navigation item.
 LINKS = (
     ('Home',     ''),
+    # ('Projects', 'projects.html'),
     ('About',    'about.html'),
 )
 
@@ -55,6 +55,14 @@ USE_FOLDER_AS_CATEGORY = True
 
 # Define the number of articles per page for the paginator.
 DEFAULT_PAGINATION = 10
+
+# ?????
+# PAGINATION_PATTERNS = (
+#     (1, '{base_name}/',
+#         '{base_name}/index.html'),
+#     (2, '{base_name}/page/{number}/',
+#         '{base_name}/page/{number}/index.html'),
+# )
 
 
 # ----------------------------------------------------------------------------
@@ -80,8 +88,7 @@ CATEGORIES_SAVE_AS = False
 ARTICLE_SAVE_AS = '{category}/{slug}.html'
 ARTICLE_URL = '{category}/{slug}.html'
 
-# Pages should be stored in a 'pages' folder, and the URL should match the
-# pattern
+# ?????
 PAGE_SAVE_AS = '{slug}.html'
 PAGE_URL = '{slug}.html'
 
@@ -119,10 +126,10 @@ PLUGIN_PATHS = [
 
 PLUGINS = [
     'assets',
-    'gzip_cache',
+    # 'gzip_cache',
     'neighbors',
-    'optimize_images',
-    'series',
+    # 'optimize_images',
+    # 'series',
     'sitemap',
 ]
 
