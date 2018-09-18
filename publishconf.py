@@ -4,8 +4,12 @@
     publishconf.py
     ~~~~~~~~~~~~~~
 
-    :copyright: (c)2017 by Jesse Braham <jesse@beta7.io>.
-    :license: MIT, see LICENSE for more details.
+    Configuration for Pelican, a static site generator written in Python.
+    Used to generate https://beta7.io/.
+
+        https://github.com/jessebraham/beta7-theme
+
+    :author: Jesse Braham <jesse@beta7.io>.
 '''
 
 # Insert the current directory into the system path so that pelicanconf can be
@@ -22,23 +26,23 @@ from pelicanconf import *  # NOQA
 
 
 # ----------------------------------------------------------------------------
-#  Site Information & Metadata
+# Site Information
 # ----------------------------------------------------------------------------
 
-SITEURL = 'https://www.beta7.io'
-
-
-# ----------------------------------------------------------------------------
-#  Site Configuration
-# ----------------------------------------------------------------------------
-
-# In production, do not use relative URLs.
-RELATIVE_URLS = False
+SITEURL = 'https://beta7.io'
 
 
 # ----------------------------------------------------------------------------
-#  Feed Configuration
+# Feed Settings
 # ----------------------------------------------------------------------------
 
-# In production, the Atom 'ALL' feed is enabled.
+# AUTHOR_FEED_ATOM = 'feeds/%s.atom.xml'
+# CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
+
+
+# ----------------------------------------------------------------------------
+# Theme Settings
+# ----------------------------------------------------------------------------
+
+RELATIVE_URLS = False
