@@ -39,10 +39,3 @@ SITEURL = 'https://beta7.io'
 # AUTHOR_FEED_ATOM = 'feeds/%s.atom.xml'
 # CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
-
-
-# ----------------------------------------------------------------------------
-# Theme Settings
-# ----------------------------------------------------------------------------
-
-RELATIVE_URLS = False

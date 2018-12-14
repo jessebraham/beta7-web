@@ -30,7 +30,9 @@ SITENAME = 'Beta7'
 SITEURL = ''  # Set value in `publishconf.py` for Production
 
 AUTHOR = 'Jesse Braham'
-DESCRIPTION = ''  # TODO: write me
+DESCRIPTION = 'The personal blog of Jesse Braham. Consists of technical ' \
+              'topics including software development, networking and ' \
+              'electronics.'
 
 
 # ----------------------------------------------------------------------------
@@ -40,7 +42,7 @@ DESCRIPTION = ''  # TODO: write me
 SOCIAL = (
     ('at-sign', 'mailto:jesse@beta7.io', 'E-mail Jesse Braham'),
     ('github', 'https://github.com/jessebraham', 'jessebraham on Github'),
-    ('gitlab', 'https://gitlab.com/jessebraham', 'jessebraham on GitLab'),
+    # ('gitlab', 'https://gitlab.com/jessebraham', 'jessebraham on GitLab'),
     ('linkedin', 'https://www.linkedin.com/in/jesse-braham-24938a4a/',
      'Jesse Braham on LinkedIn'),
 )
