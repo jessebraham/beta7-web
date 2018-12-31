@@ -21,7 +21,8 @@ from pelican import signals
 # Combine the theme's static path with the path provided by the image's `src`
 # attribute.
 def static_path(theme_path, image_path):
-    img_path = os.path.join(*(image_path.split(os.sep)[2:]))
+    img_path = image_path.replace('https://', '')
+    img_path = os.path.join(*(img_path.split(os.sep)[2:]))
     return os.path.join(theme_path, 'static', img_path)
 
 
