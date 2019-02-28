@@ -1,18 +1,14 @@
-<!-- profile -->
 <aside class="flex flex-col items-center mb-8 md:mb-0 md:mr-8 w-full md:w-1/2">
 
-  <a href="{{ SITEURL }}" class="text-grey-darkest hover:text-black">
-    <h1 class="mb-4 text-3xl">{{ AUTHOR }}</h1>
+  <a href="{{ SITEURL }}" class="mb-6 text-grey-darkest hover:text-black">
+    <h1 class="text-3xl">{{ AUTHOR }}</h1>
   </a>
-  <span class="mb-8">
-    <img height="160" width="160" class="border-black border-2 rounded-full" src="{{ SITEURL }}/theme/images/avatar.png" />
-  </span>
 
   {% for paragraph in PROFILE %}
   <p class="leading-normal mb-2 text-center text-sm">{{ paragraph|e }}</p>
   {% endfor %}
 
-  <p class="contact-icons flex justify-center mt-6 mx-auto">
+  <p class="social-icons flex justify-center mt-6 mx-auto">
     <!-- Credit: https://feathericons.com/ -->
     <a href="mailto:{{ SOCIAL['email'] }}">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-at-sign"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
@@ -29,4 +25,3 @@
   </p>
 
 </aside>
-<!-- /end profile -->
