@@ -1,106 +1,106 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-'''
-    pelicanconf.py
-    ~~~~~~~~~~~~~~
-
-    Configuration for Pelican, a static site generator written in Python.
-    Used to generate https://beta7.io/.
-
-        https://github.com/jessebraham/beta7-theme
-
-    :author: Jesse Braham <jesse@beta7.io>.
-'''
-
-# ----------------------------------------------------------------------------
-# Language & Regional Settings
-# ----------------------------------------------------------------------------
-
-DEFAULT_LANG = 'en'
-LOCALE = 'en_US'
-
-TIMEZONE = 'America/Vancouver'
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+"""
+Pelican configuration for https://beta7.io. Any values that need to be changed
+in production should be set in `publishconf.py`.
+"""
 
 
-# ----------------------------------------------------------------------------
-# Site Information
-# ----------------------------------------------------------------------------
+# General Site Configuration
 
-SITENAME = 'Beta7'
-SITEURL = ''  # Set value in `publishconf.py` for Production
+AUTHOR = "Jesse Braham"
+SITENAME = "Beta7"
+SITEURL = ""
 
-AUTHOR = 'Jesse Braham'
-DESCRIPTION = 'The personal blog of Jesse Braham. Consists of technical ' \
-              'topics including software development, networking and ' \
-              'electronics.'
+DEFAULT_LANG = "en"
+TIMEZONE = "America/Vancouver"
+
+PATH = "content"
+THEME = "theme"
 
 
-# ----------------------------------------------------------------------------
-# Social Settings
-# ----------------------------------------------------------------------------
+# Profile & Social
 
-SOCIAL = (
-    ('at-sign', 'mailto:jesse@beta7.io', 'E-mail Jesse Braham'),
-    ('github', 'https://github.com/jessebraham', 'jessebraham on Github'),
-    # ('gitlab', 'https://gitlab.com/jessebraham', 'jessebraham on GitLab'),
-    ('linkedin', 'https://www.linkedin.com/in/jesse-braham-24938a4a/',
-     'Jesse Braham on LinkedIn'),
+PROFILE = (
+    (
+        "Systems Developer residing in Kelowna, BC, Canada. Proficient in "
+        "Python, C, JavaScript, Rust, .NET, and some others."
+    ),
+    (
+        "Interests include networking & security, automation, engineering & "
+        "manufacturing, comic books, and physics. Occassionally tinker with "
+        "electronics and other hardware."
+    ),
 )
 
+SOCIAL = {
+    "email": "jesse@beta7.io",
+    "github": "jessebraham",
+    "linkedin": "jesse-braham-24938a4a",
+}
 
-# ----------------------------------------------------------------------------
-# Feed Settings
-# ----------------------------------------------------------------------------
 
-AUTHOR_FEED_ATOM = None
+# Feed Generation (usually not desired when developing)
+
+FEED_ALL_ATOM = ""
+
 CATEGORY_FEED_ATOM = None
-FEED_ATOM = None
-FEED_ALL_ATOM = None
-TAG_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
 
-# ----------------------------------------------------------------------------
-# Theme Settings
-# ----------------------------------------------------------------------------
+# Static Files
 
-PATH = './content'
-THEME = './beta7-theme'
+STATIC_PATHS = ["extra", "images"]
 
-RELATIVE_URLS = True
-USE_FOLDER_AS_CATEGORY = True
-
-AUTHOR_SAVE_AS = AUTHORS_SAVE_AS = False
-TAG_SAVE_AS = TAGS_SAVE_AS = False
-CATEGORIES_SAVE_AS = False
-
-ARTICLE_SAVE_AS = ARTICLE_URL = '{category}/{slug}.html'
-PAGE_SAVE_AS = PAGE_URL = '{slug}.html'
-
-DEFAULT_PAGINATION = 10
+EXTRA_PATH_METADATA = {
+    "extra/favicon.ico": {"path": "favicon.ico"},
+    "extra/robots.txt": {"path": "robots.txt"},
+}
 
 
-# ----------------------------------------------------------------------------
-# Extension & Plugin Settings
-# ----------------------------------------------------------------------------
+# Extensions
 
 MARKDOWN = {
-    'extension_configs': {
-        'codehilite': {},
-        'markdown.extensions.extra': {},
+    "extension_configs": {
+        "markdown.extensions.codehilite": {"css_class": "highlight"},
+        "markdown.extensions.extra": {},
+        "markdown.extensions.meta": {},
+    },
+    "output_format": "html5",
+}
+
+
+# Plugins
+
+PLUGIN_PATHS = ["pelican-plugins"]
+PLUGINS = ["sitemap"]
+
+SITEMAP = {
+    "format": "xml",
+    "priorities": {"articles": 0.5, "indexes": 0.5, "pages": 0.5},
+    "changefreqs": {
+        "articles": "monthly",
+        "indexes": "daily",
+        "pages": "monthly",
     },
 }
 
-PLUGIN_PATHS = [
-    'pelican-plugins',
-    'plugins',
-]
 
-PLUGINS = [
-    'sitemap',
-    'svg_inliner',
-]
+# Miscellaneous Configuration (generally not to be fiddled with)
 
-SITEMAP = {
-    'format': 'xml',
-}
+DEFAULT_PAGINATION = 10
+NUM_PREVIEW_LINKS = 3
+
+DELETE_OUTPUT_DIRECTORY = True
+RELATIVE_URLS = True
+USE_FOLDER_AS_CATEGORY = True
+
+AUTHOR_SAVE_AS = AUTHORS_SAVE_AS = ""
+TAG_SAVE_AS = TAGS_SAVE_AS = ""
+
+ARTICLE_SAVE_AS = ARTICLE_URL = "{category}/{slug}.html"
+CATEGORY_SAVE_AS = CATEGORY_URL = "{slug}.html"
+
+CATEGORY_REGEX_SUBSTITUTIONS = [("blog posts", "posts")]

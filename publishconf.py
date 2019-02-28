@@ -1,41 +1,20 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-'''
-    publishconf.py
-    ~~~~~~~~~~~~~~
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+"""
+This file is only used if you use `make publish` or explicitly specify it as
+your config file. It is intended to configure the site for use in production.
+"""
 
-    Configuration for Pelican, a static site generator written in Python.
-    Used to generate https://beta7.io/.
-
-        https://github.com/jessebraham/beta7-theme
-
-    :author: Jesse Braham <jesse@beta7.io>.
-'''
-
-# Insert the current directory into the system path so that pelicanconf can be
-# imported successfully.
 import os
 import sys
 
-sys.path.insert(0, os.getcwd())
-
-
-# Import all configuration from our Development Configuration as a starting
-# point, since we will be overriding a few values.
+sys.path.append(os.curdir)
 from pelicanconf import *  # NOQA
 
 
-# ----------------------------------------------------------------------------
-# Site Information
-# ----------------------------------------------------------------------------
+# If your site is available via HTTPS, make sure SITEURL begins with https://
 
-SITEURL = 'https://beta7.io'
+SITEURL = "https://beta7.io"
+RELATIVE_URLS = False
 
-
-# ----------------------------------------------------------------------------
-# Feed Settings
-# ----------------------------------------------------------------------------
-
-# AUTHOR_FEED_ATOM = 'feeds/%s.atom.xml'
-# CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED_ALL_ATOM = "feeds/all.atom.xml"
