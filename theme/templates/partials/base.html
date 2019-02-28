@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8" />
+
+  <title>{% block title -%}{{ SITENAME }}{%- endblock %}</title>
+  <meta name="description" content="" />
+  <link rel="canonical" href="" />
+
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/styles.css" />
+</head>
+
+<body class="bg-grey-lightest text-grey-darkest">
+  <main class="container min-h-screen px-6">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+
+</html>

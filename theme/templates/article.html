@@ -1,0 +1,17 @@
+{% extends "partials/base.html" %}
+
+
+{% block title %}
+{{ article.title|title }} | {{ SITENAME }}
+{% endblock %}
+
+
+{% block content %}
+<div class="post flex flex-col justify-center min-h-screen pb-16 pt-12">
+
+  <h1 class="title mb-1 text-3xl">{{ article.title }}</h1>
+  <h2 class="subtitle mb-8 text-grey-darker text-xl">{{ article.date.strftime('%Y-%m-%d') }}</h2>
+  {{ article.content }}
+
+</div>
+{% endblock %}

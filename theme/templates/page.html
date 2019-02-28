@@ -1,0 +1,16 @@
+{% extends "partials/base.html" %}
+
+
+{% block title %}
+{{ page.title|title }} | {{ SITENAME }}
+{% endblock %}
+
+
+{% block content %}
+<div class="page flex flex-col items-center justify-center min-h-screen">
+
+  <h1 class="mb-6 text-4xl">{{ page.title|title }}</h1>
+  {{ page.content }}
+
+</div>
+{% endblock %}
