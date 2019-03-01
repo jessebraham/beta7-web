@@ -73,3 +73,7 @@ a:hover {
   .post table td {
     @apply py-1;
   }
+
+.post blockquote {
+  @apply bg-grey-lighter border-grey-darker border-l-4 italic mx-4 my-4 pl-4 py-2;
+}

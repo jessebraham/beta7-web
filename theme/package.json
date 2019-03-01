@@ -3,19 +3,15 @@
   "author": "Jesse Braham <jesse@beta7.io>",
   "private": true,
   "scripts": {
-    "build": "cross-env NODE_ENV=development webpack",
-    "dist": "cross-env NODE_ENV=production webpack --no-progress"
+    "build": "postcss styles/main.css --env=development -o static/css/main.css",
+    "dist": "postcss styles/main.css --env=production -o static/css/main.css --map"
   },
   "license": "MIT",
   "devDependencies": {
-    "cross-env": "^5.2.0",
-    "css-loader": "^0.28.11",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "postcss": "^6.0.23",
-    "postcss-loader": "^2.1.6",
-    "style-loader": "^0.20.3",
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3"
+    "@fullhuman/postcss-purgecss": "^1.1.0",
+    "autoprefixer": "^9.4.9",
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^6.1.2"
   },
   "dependencies": {
     "tailwindcss": "^0.7.4"
