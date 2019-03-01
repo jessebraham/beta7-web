@@ -60,8 +60,11 @@ a:hover {
     @apply mt-2;
   }
 
+.post code {
+  @apply text-sm;
+}
 .post .highlight {
-  @apply leading-normal my-6 overflow-x-auto py-2;
+  @apply leading-normal my-6 overflow-x-auto py-2 text-sm;
 }
 
 .post table {
@@ -75,5 +78,5 @@ a:hover {
   }
 
 .post blockquote {
-  @apply bg-grey-lighter border-grey-darker border-l-4 italic mx-4 my-4 pl-4 py-2;
+  @apply mx-4 my-4 pl-2 py-2;
 }
