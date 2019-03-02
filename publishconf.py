@@ -18,3 +18,6 @@ SITEURL = "https://beta7.io"
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = "feeds/all.atom.xml"
+
+MINIFY = {"enabled": True}
+STYLESHEET_HASHES = {"enabled": True, "manifest": "theme/manifest.json"}
