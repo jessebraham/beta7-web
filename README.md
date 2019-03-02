@@ -20,8 +20,3 @@ Next, the site can be built and deployed using `make`:
 $ pip install -r requirements.txt
 $ make ssh_upload
 ```
-
-## To Do
-
-- Add favicon
-- Write proper meta description

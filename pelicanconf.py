@@ -21,7 +21,10 @@ THEME = "theme"
 
 # Meta Description, Profile & Social
 
-DESCRIPTION = ""  # 150 chars or less
+DESCRIPTION = (
+    "The personal blog of Jesse Braham. Consists of mostly technical topics "
+    "including software development, electronics, and science/mathematics."
+)
 
 PROFILE = (
     (
@@ -57,7 +60,7 @@ AUTHOR_FEED_RSS = None
 STATIC_PATHS = ["extra", "images"]
 
 EXTRA_PATH_METADATA = {
-    "extra/favicon.ico": {"path": "favicon.ico"},
+    "extra/favicon.png": {"path": "favicon.png"},
     "extra/robots.txt": {"path": "robots.txt"},
 }
 
