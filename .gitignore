@@ -9,5 +9,6 @@ content/drafts/
 output/
 
 # Theme
+theme/manifest.json
 theme/node_modules/
 theme/static/css/

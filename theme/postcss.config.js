@@ -1,5 +1,6 @@
 const autoprefixer = require('autoprefixer')
 const cssnano      = require('cssnano')
+const postcsshash  = require('postcss-hash')
 const purgecss     = require('@fullhuman/postcss-purgecss')
 const tailwindcss  = require('tailwindcss')
 
@@ -40,7 +41,10 @@ module.exports = ctx => ({
       ],
       // Post content styling, the markup for which isn't caught when building
       // the CSS as it hasn't been generated yet.
-      whitelist: ['code', 'highlight', 'pre', 'table', 'td', 'th', 'ul'],
+      whitelist: ['code', 'pre', 'table', 'td', 'th', 'ul'],
+      // Ensure that our syntax highlighting styles are not purged.
+      whitelistPatternsChildren: [/^highlight/],
     }),
+    PRODUCTION && postcsshash()
   ],
 })

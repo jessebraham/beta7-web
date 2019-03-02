@@ -66,6 +66,9 @@ a:hover {
 .post .highlight {
   @apply leading-normal my-6 overflow-x-auto py-2 text-sm;
 }
+  .post .highlight pre {
+    @apply p-2;
+  }
 
 .post table {
   @apply my-6 w-full;
