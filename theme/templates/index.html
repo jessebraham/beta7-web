@@ -1,6 +1,12 @@
 {% extends "partials/base_extended.html" %}
 
 
+{% block seo %}
+<meta name="description" content="{{ DESCRIPTION }}" />
+<link rel="canonical" href="{{ SITEURL }}" />
+{% endblock %}
+
+
 {% block inner_content %}
 
 {% for (category, articles) in categories|sort %}

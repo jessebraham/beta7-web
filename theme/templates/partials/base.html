@@ -7,10 +7,10 @@
   <meta charset="utf-8" />
 
   <title>{% block title -%}{{ SITENAME }}{%- endblock %}</title>
-  <meta name="description" content="" />
-  <link rel="canonical" href="" />
-
+  <link rel="icon" type="image/png" href="{{ SITEURL }}/favicon.png" />
   <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css" />
+  {% block styles %}{% endblock %}
+  {% block seo %}{% endblock %}
 </head>
 
 <body class="bg-grey-lightest">

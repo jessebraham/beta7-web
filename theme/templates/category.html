@@ -6,6 +6,12 @@
 {% endblock %}
 
 
+{% block seo %}
+<meta name="description" content="{{ DESCRIPTION }}" />
+<link rel="canonical" href="{{ SITEURL }}/{{ category.url }}" />
+{% endblock %}
+
+
 {% block inner_content %}
 
 <article>

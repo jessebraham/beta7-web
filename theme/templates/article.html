@@ -6,6 +6,17 @@
 {% endblock %}
 
 
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/manni.css" />
+{% endblock %}
+
+
+{% block seo %}
+<meta name="description" content="{{ article.summary|striptags  }}" />
+<link rel="canonical" href="{{ SITEURL }}/{{ article.url }}" />
+{% endblock %}
+
+
 {% block content %}
 <div class="post flex flex-col justify-center min-h-screen py-12">
 
