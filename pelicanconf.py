@@ -19,7 +19,9 @@ PATH = "content"
 THEME = "theme"
 
 
-# Profile & Social
+# Meta Description, Profile & Social
+
+DESCRIPTION = ""  # 150 chars or less
 
 PROFILE = (
     (
@@ -97,7 +99,9 @@ DELETE_OUTPUT_DIRECTORY = True
 RELATIVE_URLS = True
 USE_FOLDER_AS_CATEGORY = True
 
+ARCHIVES_SAVE_AS = ""
 AUTHOR_SAVE_AS = AUTHORS_SAVE_AS = ""
+CATEGORIES_SAVE_AS = ""
 TAG_SAVE_AS = TAGS_SAVE_AS = ""
 
 ARTICLE_SAVE_AS = ARTICLE_URL = "{category}/{slug}.html"
