@@ -1,0 +1,21 @@
+{
+  "name": "beta7.io",
+  "author": "Jesse Braham <jesse@beta7.io>",
+  "private": true,
+  "scripts": {
+    "clean": "rm static/css/*",
+    "build": "postcss ./styles --env=development --dir ./static/css",
+    "dist": "postcss ./styles --env=production --dir ./static/css --map"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.1.0",
+    "autoprefixer": "^9.4.9",
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^6.1.2",
+    "postcss-hash": "^1.0.2"
+  },
+  "dependencies": {
+    "tailwindcss": "^0.7.4"
+  }
+}

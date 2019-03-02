@@ -1,9 +1,14 @@
-# Python directories & files
-
+# Python & Development
 __pycache__/
-*.py[odc]
+.venv/
+.vscode/
+venv/
 
-# Pelican directories & files
-
-content/posts/drafts/
+# Pelican
+content/drafts/
 output/
+
+# Theme
+theme/manifest.json
+theme/node_modules/
+theme/static/css/

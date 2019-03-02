@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8" />
+
+  <title>{% block title -%}{{ SITENAME }}{%- endblock %}</title>
+  <link rel="icon" type="image/png" href="{{ SITEURL }}/favicon.png" />
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css" />
+  {% block styles %}{% endblock %}
+  {% block seo %}{% endblock %}
+</head>
+
+<body class="bg-grey-lightest">
+  <main class="container min-h-screen px-6">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+
+</html>

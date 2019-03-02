@@ -1,0 +1,25 @@
+{% extends "partials/base_extended.html" %}
+
+
+{% block seo %}
+<meta name="description" content="{{ DESCRIPTION }}" />
+<link rel="canonical" href="{{ SITEURL }}" />
+{% endblock %}
+
+
+{% block inner_content %}
+
+{% for (category, articles) in categories|sort %}
+<h2 class="mb-4 text-xl">{{ category|title }}</h2>
+
+<ul class="list-reset">
+  {% for article in articles[:NUM_PREVIEW_LINKS] %}
+  <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+  {% if loop.last and loop.index < articles|length %}
+  <li class="pt-4 text-sm"><a href="{{ article.category.url }}">See more</a></li>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endfor %}
+
+{% endblock %}

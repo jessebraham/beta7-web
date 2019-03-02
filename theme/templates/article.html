@@ -1,0 +1,31 @@
+{% extends "partials/base.html" %}
+
+
+{% block title %}
+{{ article.title|title }} | {{ SITENAME }}
+{% endblock %}
+
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/manni.css" />
+{% endblock %}
+
+
+{% block seo %}
+<meta name="description" content="{{ article.summary|striptags  }}" />
+<link rel="canonical" href="{{ SITEURL }}/{{ article.url }}" />
+{% endblock %}
+
+
+{% block content %}
+<div class="post flex flex-col justify-center min-h-screen py-12">
+
+  <h1 class="title mb-1 text-3xl">{{ article.title }}</h1>
+  <h2 class="subtitle mb-8 text-grey-darker text-xl">{{ article.date.strftime('%Y-%m-%d') }}</h2>
+  {{ article.content }}
+
+</div>
+
+{% include "partials/footer.html" %}
+
+{% endblock %}

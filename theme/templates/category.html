@@ -1,0 +1,28 @@
+{% extends "partials/base_extended.html" %}
+
+
+{% block title %}
+{{ category|title }} | {{ SITENAME }}
+{% endblock %}
+
+
+{% block seo %}
+<meta name="description" content="{{ DESCRIPTION }}" />
+<link rel="canonical" href="{{ SITEURL }}/{{ category.url }}" />
+{% endblock %}
+
+
+{% block inner_content %}
+
+<article>
+  <h2 class="mb-4 text-xl">All {{ category|title }}</h2>
+
+  <ul class="list-reset">
+    {% for article in articles %}
+    <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+    {% endfor %}
+    <li class="pt-4 text-sm"><a href="{{ SITEURL }}">Back to index</a></li>
+  </ul>
+</article>
+
+{% endblock %}
