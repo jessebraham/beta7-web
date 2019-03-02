@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 
-import datetime
 import os
 import shutil
 import sys
 
 from invoke import task
-from invoke.util import cd
 from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
 
 CONFIG = {
     # Local path configuration (can be absolute or relative to tasks.py)
     "deploy_path": "output",
+    # Remote server configuration
+    "production": "deploy@beta7.io:22",
+    "dest_path": "~/docker/nginx/html",
     # Port for `serve`
     "port": 8000,
 }

@@ -8,6 +8,11 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
+SSH_HOST=beta7.io
+SSH_PORT=22
+SSH_USER=deploy
+SSH_TARGET_DIR=~/docker/nginx/html
+
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
