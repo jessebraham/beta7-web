@@ -74,7 +74,7 @@ MARKDOWN = {
 
 # Plugins
 
-PLUGIN_PATHS = ["pelican-plugins", "plugins"]
+PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["html_minifier", "sitemap", "stylesheet_hashes"]
 
 SITEMAP = {
