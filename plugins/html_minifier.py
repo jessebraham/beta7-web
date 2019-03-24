@@ -6,7 +6,7 @@ import logging
 from htmlmin import minify
 from pelican import signals
 
-from plugins.common import list_files
+from plugins import list_files
 
 
 logger = logging.getLogger(__name__)

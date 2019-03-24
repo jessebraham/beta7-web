@@ -2,17 +2,13 @@
 # -*- coding: utf-8 -*-
 
 import json
-import logging
 import os
 
 from html.parser import HTMLParser
 
 from pelican import signals
 
-from plugins.common import list_files
-
-
-logger = logging.getLogger(__name__)
+from plugins import list_files
 
 
 class StylesheetParser(HTMLParser):
@@ -53,24 +49,12 @@ def add_stylesheet_hash(pelican):
     if not enabled:
         return
 
-    manifest = load_manifest(options)
+    with open(options.get("manifest"), "r") as f:
+        manifest = json.loads(f.read())
+
     html_files = list_files(pelican.settings["OUTPUT_PATH"], ".html")
     for filename in html_files:
         replace_stylesheet_filename(filename, manifest)
-
-
-def load_manifest(options):
-    """
-    Load the contents from the manifest file specified in the Pelican options,
-    parsing the JSON into a native `dict` in the process.
-
-    :param dict options: The Pelican options.
-    :return dict: Manifest contents.
-    """
-    with open(options.get("manifest"), "r") as f:
-        contents = f.read()
-
-    return json.loads(contents)
 
 
 def replace_stylesheet_filename(filename, manifest):
@@ -87,16 +71,13 @@ def replace_stylesheet_filename(filename, manifest):
     parser = StylesheetParser()
     parser.feed(contents)
 
-    changes_made = False
     for sheet in parser.urls:
         (_, name) = os.path.split(os.path.basename(sheet))
         if name in manifest:
             contents = contents.replace(name, manifest[name])
-            changes_made = True
 
-    if changes_made:
-        with open(filename, "w") as f:
-            f.write(contents)
+    with open(filename, "w") as f:
+        f.write(contents)
 
 
 def register():
