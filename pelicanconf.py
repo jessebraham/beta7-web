@@ -80,7 +80,13 @@ MARKDOWN = {
 # Plugins
 
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["html_minifier", "sitemap", "stylesheet_hashes"]
+PLUGINS = [
+    "header_ids",
+    "html_minifier",
+    "improve_images",
+    "sitemap",
+    "stylesheet_hashes",
+]
 
 SITEMAP = {
     "format": "xml",
