@@ -10,8 +10,8 @@ PUBLISHCONF=$(BASEDIR)/publishconf.py
 
 SSH_HOST=beta7.io
 SSH_PORT=22
-SSH_USER=deploy
-SSH_TARGET_DIR=~/docker/nginx/html
+SSH_USER=jesse
+SSH_TARGET_DIR=~/sites/beta7.io/html
 
 
 DEBUG ?= 0

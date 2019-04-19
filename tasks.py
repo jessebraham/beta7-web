@@ -11,8 +11,8 @@ CONFIG = {
     # Local path configuration (can be absolute or relative to tasks.py)
     "deploy_path": "output",
     # Remote server configuration
-    "production": "deploy@beta7.io:22",
-    "dest_path": "~/docker/nginx/html",
+    "production": "jesse@beta7.io:22",
+    "dest_path": "~/sites/beta7.io/html",
     # Port for `serve`
     "port": 8000,
 }
