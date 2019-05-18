@@ -21,8 +21,13 @@
 <div class="post flex flex-col justify-center min-h-screen py-12">
 
   <h1 class="title mb-1 text-3xl">{{ article.title }}</h1>
-  <h2 class="subtitle mb-8 text-grey-darker text-xl">{{ article.date.strftime('%Y-%m-%d') }}</h2>
-  {{ article.content }}
+  {# Hack to hide the article's publish date, by providing a fake date. #}
+  {% if article.date.year > 2000 %}
+  <h2 class="subtitle text-grey-darker text-xl">{{ article.date|strftime('%Y-%m-%d') }}</h2>
+  {% endif %}
+  <div class="mt-8">
+    {{ article.content }}
+  </div>
 
 </div>
 
