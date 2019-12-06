@@ -1,4 +1,3 @@
 [tool.black]
 line-length = 80
-target-version = "cpy36"
-exclude = ".venv|pelican-plugins"
+target-version = ["py36", "py37", "py38"]

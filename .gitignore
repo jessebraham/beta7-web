@@ -1,14 +1,7 @@
 # Python & Development
 __pycache__/
-.venv/
 .vscode/
-venv/
 
 # Pelican
 content/drafts/
 output/
-
-# Theme
-theme/manifest.json
-theme/node_modules/
-theme/static/css/
