@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8" />
+
+  <title>{% block title -%}{{ SITENAME }}{%- endblock %}</title>
+  <link rel="icon" type="image/png" href="{{ SITEURL }}/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{ SITEURL }}/favicon-16x16.png" sizes="16x16" />
+  {% block seo %}{% endblock %}
+
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css" />
+  {% block styles %}{% endblock %}
+</head>
+
+<body>
+  <div class="flex flex-col justify-center min-h-full px-6">
+    {% include "partials/_header.html" %}
+
+    <main role="main">
+      <div class="container content">
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+
+    {% include "partials/_footer.html" %}
+  </div>
+</body>
+
+</html>

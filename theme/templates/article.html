@@ -1,13 +1,8 @@
-{% extends "partials/base.html" %}
+{% extends "partials/_base.html" %}
 
 
 {% block title %}
 {{ article.title|title }} | {{ SITENAME }}
-{% endblock %}
-
-
-{% block styles %}
-<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/manni.css" />
 {% endblock %}
 
 
@@ -17,20 +12,18 @@
 {% endblock %}
 
 
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/native.css" />
+{% endblock %}
+
+
 {% block content %}
-<div class="post flex flex-col justify-center min-h-screen py-12">
+<article>
+  <h1>{{ article.title }}</h1>
+  <h2>{{ article.date|strftime("%Y-%m-%d") }}</h2>
 
-  <h1 class="title mb-1 text-3xl">{{ article.title }}</h1>
-  {# Hack to hide the article's publish date, by providing a fake date. #}
-  {% if article.date.year > 2000 %}
-  <h2 class="subtitle text-grey-darker text-xl">{{ article.date|strftime('%Y-%m-%d') }}</h2>
-  {% endif %}
-  <div class="mt-8">
+  <section class="article-content">
     {{ article.content }}
-  </div>
-
-</div>
-
-{% include "partials/footer.html" %}
-
+  </section>
+</article>
 {% endblock %}

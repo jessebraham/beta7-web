@@ -1,4 +1,4 @@
-{% extends "partials/base_extended.html" %}
+{% extends "partials/_base.html" %}
 
 
 {% block seo %}
@@ -7,19 +7,17 @@
 {% endblock %}
 
 
-{% block inner_content %}
+{% block content %}
 
 {% for (category, articles) in categories|sort %}
-<h2 class="mb-4 text-xl">{{ category|title }}</h2>
+  {% for article in articles %}
+    <article class="article-preview">
+      <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+      <h2>{{ article.date|strftime("%Y-%m-%d") }}</h2>
 
-<ul class="list-reset">
-  {% for article in articles[:NUM_PREVIEW_LINKS] %}
-  <li><a href="{{ article.url }}">{{ article.title }}</a></li>
-  {% if loop.last and loop.index < articles|length %}
-  <li class="pt-4 text-sm"><a href="{{ article.category.url }}">See more</a></li>
-  {% endif %}
+      <p class="summary">{{ article.summary }}</p>
+    </article>
   {% endfor %}
-</ul>
 {% endfor %}
 
 {% endblock %}

@@ -19,29 +19,17 @@ PATH = "content"
 THEME = "theme"
 
 
-# Meta Description, Profile & Social
+# Meta Description & Social
 
 DESCRIPTION = (
     "The personal blog of Jesse Braham. Consists of mostly technical topics "
     "including software development, electronics, and science/mathematics."
 )
 
-PROFILE = (
-    (
-        "Systems Developer residing in Kelowna, BC, Canada. Proficient in "
-        "Python, C, JavaScript, Rust, .NET, and some others."
-    ),
-    (
-        "Interests include networking & security, automation, engineering & "
-        "manufacturing, comic books, and physics. Occassionally tinker with "
-        "electronics and other hardware."
-    ),
-)
-
 SOCIAL = {
     "email": "jesse@beta7.io",
     "github": "jessebraham",
-    "linkedin": "jesse-braham-24938a4a",
+    "linkedin": "jessebraham",
 }
 
 
@@ -60,7 +48,8 @@ AUTHOR_FEED_RSS = None
 STATIC_PATHS = ["extra", "images"]
 
 EXTRA_PATH_METADATA = {
-    "extra/favicon.png": {"path": "favicon.png"},
+    "extra/favicon-16x16.png": {"path": "favicon-16x16.png"},
+    "extra/favicon-32x32.png": {"path": "favicon-32x32.png"},
     "extra/robots.txt": {"path": "robots.txt"},
 }
 
@@ -101,8 +90,7 @@ SITEMAP = {
 
 # Miscellaneous Configuration (generally not to be fiddled with)
 
-DEFAULT_PAGINATION = 10
-NUM_PREVIEW_LINKS = 3
+DEFAULT_PAGINATION = 8
 
 DELETE_OUTPUT_DIRECTORY = True
 RELATIVE_URLS = True
@@ -110,10 +98,10 @@ USE_FOLDER_AS_CATEGORY = True
 
 ARCHIVES_SAVE_AS = ""
 AUTHOR_SAVE_AS = AUTHORS_SAVE_AS = ""
-CATEGORIES_SAVE_AS = ""
+CATEGORY_SAVE_AS = CATEGORIES_SAVE_AS = ""
 TAG_SAVE_AS = TAGS_SAVE_AS = ""
 
 ARTICLE_SAVE_AS = ARTICLE_URL = "{category}/{slug}.html"
-CATEGORY_SAVE_AS = CATEGORY_URL = "{slug}.html"
+PAGE_SAVE_AS = PAGE_URL = "{slug}.html"
 
 CATEGORY_REGEX_SUBSTITUTIONS = [("blog posts", "posts")]

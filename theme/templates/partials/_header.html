@@ -1,0 +1,11 @@
+<header class="container">
+  <a href="/" class="title">{{ SITENAME }}</a>
+
+  {% if DISPLAY_PAGES_ON_MENU  %}
+  <nav role="navigation">
+  {% for p in pages|sort(attribute="sort_order") %}
+    <a href="{{ SITEURL }}/{{ p.url }}"{% if p == page %} class="active"{% endif %}>{{ p.title }}</a>
+  {% endfor %}
+  </nav>
+  {% endif %}
+</header>

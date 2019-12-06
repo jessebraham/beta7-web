@@ -1,6 +1,6 @@
 Title:   Monoprice MP Select Mini V2: First Impressions  
 Date:    2019-05-18  
-Summary: First impressions of the Monoprice MP Select Mini V2 3D printer  
+Summary: First impressions of the Monoprice MP Select Mini V2 3D printer.  
 
 
 I've wanted a 3D printer pretty much from the moment I learned of their existence. After all these years, for a multitude of reasons, I never really got around to purchasing one. Recently I began to yet again entertain the idea, and after a bit of research (and probably a few too many beers) I finally decided to finally pull the trigger.
