@@ -6,6 +6,15 @@
 {% endblock %}
 
 
+{% block styles %}
+{% if page and page.stylesheets %}
+  {% for stylesheet in page.stylesheets %}
+    {{ stylesheet }}
+  {% endfor %}
+{% endif %}
+{% endblock %}
+
+
 {% block content %}
 <article class="page">
   <h1>{{ page.title|title }}</h1>
@@ -14,4 +23,13 @@
     {{ page.content }}
   </section>
 </article>
+{% endblock %}
+
+
+{% block scripts %}
+{% if page and page.javascripts %}
+  {% for javascript in page.javascripts %}
+    {{ javascript }}
+  {% endfor %}
+{% endif %}
 {% endblock %}

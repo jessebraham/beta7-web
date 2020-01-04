@@ -13,7 +13,7 @@
   {% for article in articles %}
     <article class="article-preview">
       <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-      <h2>{{ article.date|strftime("%Y-%m-%d") }}</h2>
+      <h2 class="subtitle">{{ article.date|strftime("%Y-%m-%d") }}</h2>
 
       <p class="summary">{{ article.summary }}</p>
     </article>

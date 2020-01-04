@@ -19,11 +19,29 @@
 
 {% block content %}
 <article>
-  <h1>{{ article.title }}</h1>
-  <h2>{{ article.date|strftime("%Y-%m-%d") }}</h2>
+  <h1 class="title">{{ article.title }}</h1>
+  <h2 class="subtitle">{{ article.date|strftime("%Y-%m-%d") }}</h2>
 
   <section class="article-content">
+    {% if article.series %}
+      <div class="my-10">
+        <p class="italic">This post is part {{ article.series.index }} of the "{{ article.series.name }}" series:</p>
+
+        <ol class="ml-8">
+        {% for part_article in article.series.all %}
+          <li>
+            <a href="{{ SITEURL }}/{{ part_article.url }}">{{ part_article.title }}</a>
+            {% if part_article == article %}
+            <span>(you are here)</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ol>
+      </div>
+    {% endif %}
+
     {{ article.content }}
   </section>
 </article>
+
 {% endblock %}
