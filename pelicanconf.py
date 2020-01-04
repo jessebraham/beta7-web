@@ -72,7 +72,8 @@ PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
     "header_ids",
     "html_minifier",
-    "improve_images",
+    "pelican_javascript",
+    "series",
     "sitemap",
     "stylesheet_hashes",
 ]

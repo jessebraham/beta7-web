@@ -1,12 +1,9 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import logging
 
 from htmlmin import minify
 from pelican import signals
 
-from plugins import list_files
+from plugins import find_html_files
 
 
 logger = logging.getLogger(__name__)
@@ -14,40 +11,21 @@ logger = logging.getLogger(__name__)
 
 def minify_html(pelican):
     """
-    Minify all HTML files found in the configured output directory.
+    Minify all HTML files found in the configured output directory, overwriting
+    the original file in the process.
 
-    Checks for a `MINIFY` configuration entry in the Pelican settings, which
-    in turn should contain an `enabled` flag value. If the configuration is
-    not provided, the plugin defaults to disabled.
-
-    :param pelican: The Pelican instance.
+    :param pelican: the Pelican instance
     """
-    options = pelican.settings.get("MINIFY", {})
-    enabled = options.get("enabled", False)
-    if not enabled:
-        return
+    for filename in find_html_files(pelican):
+        with open(filename, "r") as f:
+            contents = f.read()
 
-    html_files = list_files(pelican.settings["OUTPUT_PATH"], ".html")
-    for filename in html_files:
-        minify_file(filename)
-
-
-def minify_file(filename):
-    """
-    Given a path to an HTML file, minify its contents, overwriting the original
-    file in the process.
-
-    :param str filename: The file to minify.
-    """
-    with open(filename, "r") as f:
-        contents = f.read()
-
-    try:
-        contents = minify(contents)
-        with open(filename, "w") as f:
-            f.write(contents)
-    except Exception as ex:
-        logger.critical(f"HTML minification failed: {ex}")
+        try:
+            contents = minify(contents)
+            with open(filename, "w") as f:
+                f.write(contents)
+        except Exception as ex:
+            logger.critical(f"HTML minification failed: {ex}")
 
 
 def register():

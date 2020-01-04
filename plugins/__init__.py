@@ -1,23 +1,16 @@
-# -*- coding: utf-8 -*-
-
 import os
 
 
-def list_files(directory, extension):
+def find_html_files(pelican):
     """
-    Given a directory, recursively search for all files contained within it
-    whose extension matches the provided paramater of the same name.
+    Find and return all HTML files within the configured output directory.
 
-    :param str directory: The directory to walk.
-    :param str extension: The file extension to search for.
+    :param pelican: the Pelican instance
     """
     matching_files = []
-
-    for root, _, files in os.walk(directory):
+    for root, _, files in os.walk(pelican.settings["OUTPUT_PATH"]):
         matching_files += [
-            os.path.join(root, name)
-            for name in files
-            if name.endswith(extension)
+            os.path.join(root, name) for name in files if name.endswith(".html")
         ]
 
     return matching_files
